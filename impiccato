@@ -4,9 +4,7 @@ import random
 with open("parole.txt") as file_parole:
     parole = file_parole.readlines()
 
-
 parola = random.choice(parole).strip()
-
 
 tentativi = 10
 lettere_indovinate = []
