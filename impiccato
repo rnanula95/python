@@ -23,6 +23,7 @@ while tentativi > 0 and set(parola) != set(lettere_indovinate):
     else:
         tentativi -= 1
         print("Sbagliato. Ti restano", tentativi, "tentativi.")
+
         
 if set(parola) == set(lettere_indovinate):
     print("Complimenti, hai indovinato la parola", parola + "!")
