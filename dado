@@ -14,3 +14,4 @@ elif dado1 + dado2 == 7:
    print("Hai vinto!")
 else:
    print("Hai perso!")
+
