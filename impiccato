@@ -1,0 +1,32 @@
+import random
+
+
+with open("parole.txt") as file_parole:
+    parole = file_parole.readlines()
+
+
+parola = random.choice(parole).strip()
+
+
+tentativi = 10
+lettere_indovinate = []
+
+while tentativi > 0 and set(parola) != set(lettere_indovinate):
+    for lettera in parola:
+        if lettera in lettere_indovinate:
+            print(lettera, end=" ")
+        else:
+            print("_", end=" ")
+    print()
+    lettera = input("Indovina una lettera: ").lower()
+    if lettera in parola:
+        lettere_indovinate.append(lettera)
+        print("Hai indovinato!")
+    else:
+        tentativi -= 1
+        print("Sbagliato. Ti restano", tentativi, "tentativi.")
+        
+if set(parola) == set(lettere_indovinate):
+    print("Complimenti, hai indovinato la parola", parola + "!")
+else:
+    print("Mi dispiace, hai esaurito i tentativi. La parola era", parola + ".")
