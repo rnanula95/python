@@ -1,0 +1,16 @@
+import random
+ 
+dado1 = random.randint(1,6)
+dado2 = random.randint(1,6)
+
+esito = dado1 + dado2
+
+print(f"{dado1} + {dado2}")
+print(esito)
+
+if dado1 == dado2: 
+   print("Hai vinto!")
+elif dado1 + dado2 == 7:
+   print("Hai vinto!")
+else:
+   print("Hai perso!")
