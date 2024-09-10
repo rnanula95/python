@@ -1,0 +1,9 @@
+anno = float(input("Inserisci un anno e scopri se è bisestile o no: "))
+if anno % 400 == 0 :       
+    print("Sì")   
+elif anno % 100 == 0: 
+    print("No")
+elif(anno % 4 == 0):     
+    print("Sì")
+else:                   
+    print("No")
