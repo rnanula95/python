@@ -1,0 +1,21 @@
+from random import choice
+
+sacco = []
+numeriEstratti = []
+
+n = 1
+while n < 91:
+    sacco.append(n)
+    n += 1
+
+while len(sacco) > 0:
+    response = input("Estrarre il prossimo numero?")
+    if response.upper() == "ESTRATTI":
+        print("Numeri estratti:", numeriEstratti)
+    else:
+        x = choice(sacco)
+        sacco.remove(x)
+        numeriEstratti.append(x)
+        print("Ho estratto il numero", x)
+
+print("Hai estratto tutti i numeri dal sacco")
