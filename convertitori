@@ -1,0 +1,29 @@
+#Convertitore Bitcoin-Euro
+es = int(input("Inserisci il valore in Bitcoin: "))
+btc = 40000
+euro = es * btc
+print(f"{es} Bitcoin sono equivalenti a {euro} Euro.")
+print()
+
+#Convertitore da Bit a Byte
+es = int(input("inserisci il valore in bit: "))
+bit = 8
+byte = es * bit
+print(f"{es} Byte sono equivalenti a {byte} bit")
+print()
+
+#Convertitore da Galloni a Litri
+galloni = int(input("inserisci il valore in galloni: "))
+litri = galloni * 3.8
+print(f"{litri} Litri sono equivalenti a {galloni} galloni")
+print()
+
+#ConverƟtore da Miglia a Chilometri
+miglia = int(input("inserisci il valore in miglia: "))
+chilometri = miglia * 1.60934
+print(f"{miglia} miglia sono equivalenti a {chilometri} chilometri")
+print()
+
+
+
+
