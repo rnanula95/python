@@ -1,0 +1,124 @@
+'''
+In questo esercizio, l’utente inserirà determinati numeri come input e potrà scegliere se eseguire un’unica operazione su di essi. 
+Dopo aver ottenuto il risultato, l’utente potrà decidere se eseguire ulteriori operazioni o visualizzare tutte le operazioni insieme.
+NB: Se i numeri inseriti sono numerosi e di dimensioni eccessive, potrebbe verificarsi l’errore “Result too large”
+'''
+def trova_min_max(numeri):
+    min_num = min(numeri)
+    max_num = max(numeri)
+    return min_num, max_num
+
+def esegui_operazione(numeri, operazione):
+    if operazione == 1:
+        return "Somma", int(sum(numeri))
+    elif operazione == 2:
+        risultato = numeri[0]
+        for numero in numeri[1:]:
+            risultato -= numero
+        return "Sottrazione", int(risultato)
+    elif operazione == 3:
+        risultato = 1
+        for numero in numeri:
+            risultato *= numero
+        return "Moltiplicazione", int(risultato)
+    elif operazione == 4:
+        risultato = numeri[0]
+        for numero in numeri[1:]:
+            risultato /= numero
+        return "Divisione", risultato
+    elif operazione == 5:
+        risultato = numeri[0]
+        for numero in numeri[1:]:
+            risultato //= numero
+        return "Divisione intera", int(risultato)
+    elif operazione == 6:
+        risultato = numeri[0]
+        for numero in numeri[1:]:
+            risultato %= numero
+        return "Modulo", int(risultato)
+    elif operazione == 7:
+        risultato = numeri[0]
+        for numero in numeri[1:]:
+            risultato **= numero
+        return "Potenza", int(risultato)
+    elif operazione == 8:
+        return "Media", sum(numeri) / len(numeri)
+    elif operazione == 9:
+        min_num, _ = trova_min_max(numeri)
+        return "Numero minore", int(min_num)
+    elif operazione == 10:
+        _, max_num = trova_min_max(numeri)
+        return "Numero maggiore", int(max_num)
+    else:
+        return None, None
+
+def main():
+    n = int(input("Quanti numeri vuoi inserire? "))
+    numeri = []
+
+    for x in range(n):
+        numero = float(input(f"Inserisci il numero {x+1}: "))
+        numeri.append(numero)
+
+    tutte_operazioni = input("Vuoi calcolare tutte le operazioni insieme? (sì/no): ").lower()
+
+    if tutte_operazioni == 'sì':
+        operazioni = list(range(1, 11))  # Esclude l'operazione 11
+    else:
+        print("Scegli l'operazione da eseguire:")
+        print("1. Somma")
+        print("2. Sottrazione")
+        print("3. Moltiplicazione")
+        print("4. Divisione")
+        print("5. Divisione intera")
+        print("6. Modulo")
+        print("7. Potenza")
+        print("8. Media")
+        print("9. Numero minore")
+        print("10. Numero maggiore")
+        operazione = int(input("Inserisci il numero dell'operazione scelta: "))
+        operazioni = [operazione]
+
+    for operazione in operazioni:
+        nome_operazione, risultato = esegui_operazione(numeri, operazione)
+        if risultato is not None:
+            print(f"{nome_operazione}: {risultato}")
+        else:
+            print(f"Operazione {operazione} non valida.")
+
+    while tutte_operazioni == 'no':
+        controlla_tutte = input("Vuoi comunque controllare tutte le operazioni? (sì/no): ").lower()
+        if controlla_tutte == 'sì':
+            print(f"Numeri scelti: {numeri}")
+            for operazione in range(1, 11):  # Esclude l'operazione 11
+                nome_operazione, risultato = esegui_operazione(numeri, operazione)
+                if risultato is not None:
+                    print(f"{nome_operazione}: {risultato}")
+                else:
+                    print(f"Operazione {operazione} non valida.")
+            break
+        else:
+            altra_operazione = input("Vuoi vedere un'altra operazione? (sì/no): ").lower()
+            if altra_operazione == 'sì':
+                print("Scegli l'operazione da eseguire:")
+                print("1. Somma")
+                print("2. Sottrazione")
+                print("3. Moltiplicazione")
+                print("4. Divisione")
+                print("5. Divisione intera")
+                print("6. Modulo")
+                print("7. Potenza")
+                print("8. Media")
+                print("9. Numero minore")
+                print("10. Numero maggiore")
+                operazione = int(input("Inserisci il numero dell'operazione scelta: "))
+                nome_operazione, risultato = esegui_operazione(numeri, operazione)
+                if risultato is not None:
+                    print(f"{nome_operazione}: {risultato}")
+                else:
+                    print(f"Operazione {operazione} non valida.")
+            else:
+                break
+
+if __name__ == "__main__":
+    main()
