@@ -1,0 +1,12 @@
+area = (input("Vuoi calcolare l'area di un triangolo o di un rettangolo? (t/r): "))
+if not area == "t" and not area == "r":
+    print("Attenzione! Errore nel carattere")
+else:
+    b = float(input("Qual è la base?"))
+    h = float(input("Qual è l'altezza del trianolo?"))
+    areaT = float((b * h)/2)
+    areaR = float(b * h)
+    if area == "t":
+        print(f"L'area del triangolo è {areaT}")
+    if area == "r":
+        print(f"L'area del rettangolo è {areaR}")
