@@ -1,0 +1,10 @@
+x = float(input("Inserisci una coordinata: "))
+y = float(input("Inserisci un'altra coordinata: "))
+if x > 0 and y > 0:
+    print("primo quadrante")
+elif x < 0 and y > 0:
+    print("secondo quandrante")
+elif x < 0 and y < 0:
+    print("terzo quandrante")
+elif x > 0 and y < 0:
+    print("quarto quandrante")
