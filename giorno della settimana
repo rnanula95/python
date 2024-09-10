@@ -1,0 +1,25 @@
+Lun = 1
+Mar = 2
+Mer = 3
+Gio = 4
+Ven = 5
+Sab = 6
+Dom = 7
+Giorno = int(input("Scrivi un numero tra 1 e 7: "))
+
+if Giorno == Lun:
+    print("Hai scelto il Lunedì!")
+elif Giorno == Mar:
+    print("Hai scelto il Martedì!")    
+elif Giorno == Mer:
+    print("Hai scelto il Mercoledì!")
+elif Giorno == Gio:
+    print("Hai scelto il Giovedì!")
+elif Giorno == Ven:
+    print("Hai scelto il Venerdì!")
+elif Giorno == Sab:
+    print("Hai scelto il Sabato!")
+elif Giorno == Dom:
+    print("Hai scelto la Domenica!")
+else:
+    print("Ma sai leggere le istruzioni?")
