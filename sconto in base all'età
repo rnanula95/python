@@ -1,0 +1,7 @@
+age = int(input("Quanti anni hai? "))
+if age < 18:
+    print("Hai diritto al 10% di sconto")
+elif age >= 18 and age <= 50:
+    print("Hai diritto al 30% di sconto")
+else:
+    print("Hai diritto al 50% di sconto")
