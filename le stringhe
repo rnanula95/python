@@ -1,0 +1,8 @@
+str1 = (input("inserisci una parola: "))
+str2 = (input("inserisci un'altra parola: "))
+if len(str1) > len(str2):
+    print(f"{str1} è più lunga di {str2}")
+elif len(str1) == len(str2):
+    print(f"le due parole sono lunghe uguali")
+else:
+    print(f"{str2} è più lunga di {str1}")
